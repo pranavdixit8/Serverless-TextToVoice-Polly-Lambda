@@ -31,11 +31,11 @@ def lambda_handler(event, context):
         VoiceId = voice
     )
         
-        if "AudioStream" in response:
-            with closing(response["AudioStream"]) as stream:
-                output = os.path.join("/tmp/", postId)
-                with open(output, "a") as file:
-                    file.write(stream.read())
+    if "AudioStream" in response:
+        with closing(response["AudioStream"]) as stream:
+            output = os.path.join("/tmp/", postId)
+            with open(output, "a") as file:
+                file.write(stream.read())
 
 
 
